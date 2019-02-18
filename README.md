@@ -8,6 +8,7 @@ This is a list of all scripts that are currently available in this repository. E
 
 | Script | Description |
 | ------ | ----------- |
+| [`api`](api) | A thin wrapper of the API that can be used in custom Pyhton scripts. |
 
 
 ## How to add your script

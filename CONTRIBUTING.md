@@ -17,7 +17,7 @@ The readme file should contain all the information that is needed to use your sc
 
 ## Language
 
-As BIIGLE is written in PHP and Python, we prefer these languages for custom scripts to keep fragmentation low. However, we are happy to accept scripts written in other languages if they are well documented, too.
+As BIIGLE is written in PHP and Python 3, we prefer these languages for custom scripts to keep fragmentation low. However, we are happy to accept scripts written in other languages if they are well documented, too.
 
 ## Submission
 
