@@ -30,4 +30,8 @@ members = api.get('projects/{}/users'.format(projects[0]['id'])).json()
 # Remove the first member from the first project.
 # See: https://biigle.de/doc/api/index.html#api-Projects-DestroyProjectUsers
 api.delete('projects/{}/users/{}'.format(projects[0]['id'], members[0]['id']))
+
+# Update the name of the first project.
+# See: https://biigle.de/doc/api/index.html#api-Projects-UpdateProjects
+api.put('projects/{}'.format(projects[0]['id']), json={'name': 'New Project Name'})
 ```
