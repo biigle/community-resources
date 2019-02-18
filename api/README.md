@@ -13,7 +13,7 @@ The API wrapper is instantiated with the user email address and [API token](http
 Example:
 
 ```python
-from ..api.api import Api
+from api import Api
 
 email = 'joe@example.com'
 token = 'kxMif2STrhIHkUrbB7AhR1rDiN1Y5USq'
