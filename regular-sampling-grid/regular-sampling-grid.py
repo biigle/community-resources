@@ -1,4 +1,6 @@
 import sys
+import copy
+from requests.exceptions import HTTPError
 from api import Api
 
 # Enter your user email address here.
@@ -38,6 +40,14 @@ post_data = {
 total = len(image_ids) * rows * columns
 current = 0
 
+can_batch_create = True
+try:
+   api.post('annotations')
+except HTTPError as e:
+   can_batch_create = False
+batch_size = 100
+batch = []
+
 for image_id in image_ids:
    if not assume_same_dimension or not rectangle_width or not rectangle_height:
       # Get detailed information on an image, including width and height in pixels.
@@ -58,8 +68,19 @@ for image_id in image_ids:
             x, y + rectangle_height,
          ]
 
-         # Create a new rectangle annotation for the image.
-         # https://biigle.de/doc/api/index.html#api-Annotations-StoreImageAnnotations
-         api.post('images/{}/annotations'.format(image_id), json=post_data)
+         if can_batch_create:
+            post_data['image_id'] = image_id
+            batch.append(copy.copy(post_data))
+            if len(batch) == batch_size:
+               api.post('annotations', json=batch)
+               batch = []
+         else:
+            # Create a new rectangle annotation for the image.
+            # https://biigle.de/doc/api/index.html#api-Annotations-StoreImageAnnotations
+            api.post('images/{}/annotations'.format(image_id), json=post_data)
+
          current += 1
          print('Created {} of {}'.format(current, total))
+
+if can_batch_create and len(batch) > 0:
+   api.post('annotations', json=batch)
