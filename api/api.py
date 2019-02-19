@@ -37,7 +37,10 @@ class Api(object):
       kwargs['headers'] = headers
       kwargs['auth'] = self.auth
 
-      return method('{}/{}'.format(self.base_url, url), *args, **kwargs)
+      response = method('{}/{}'.format(self.base_url, url), *args, **kwargs)
+      response.raise_for_status()
+
+      return response
 
    def get(self, url, *args, **kwargs):
       """Perform a GET request to the API
