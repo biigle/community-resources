@@ -6,7 +6,7 @@ A regular grid may be useful in some cases of area coverage estimation. To avoid
 
 ## Installation
 
-This script expects the [API wrapper script](/api) in a sibling directory (like in this repository). You can also replace the [api.py](api.py) link with the actual file.
+This script expects the [API wrapper script](/biigle) in a sibling directory (like in this repository). You can also replace the [biigle.py](biigle.py) link with the actual file.
 
 ## Usage
 

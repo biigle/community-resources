@@ -8,7 +8,7 @@ This is a list of all scripts that are currently available in this repository. E
 
 | Script | Description |
 | ------ | ----------- |
-| [`api`](api) | A thin wrapper of the API that can be used in custom Pyhton scripts. |
+| [`biigle`](biigle) | A thin wrapper of the BIIGLE API that can be used in custom Pyhton scripts. |
 | [`regular-sampling-grid`](regular-sampling-grid) | Create annotations that form a regular grid for all images of a volume. |
 
 

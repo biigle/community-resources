@@ -1,7 +1,7 @@
 import sys
 import copy
 from requests.exceptions import HTTPError
-from api import Api
+from biigle import Api
 
 # Enter your user email address here.
 email = ''
