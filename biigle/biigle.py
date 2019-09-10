@@ -19,7 +19,7 @@ class Api(object):
       self.headers = {'Accept': 'application/json'}
       self.headers.update(headers)
 
-   def call(self, method, url, *args, **kwargs):
+   def call(self, method, url, raise_for_status = True, *args, **kwargs):
       """Perform an API call
 
       In addition to the method and URL, any args or kwargs of the requests method are
@@ -28,6 +28,7 @@ class Api(object):
       Args:
          method: The requests method to use for the api call.
          url: The API endpoint to call.
+         raise_for_status: Raise an exception if the response code is not ok.
       """
       if 'headers' in kwargs:
          headers = copy.deepcopy(self.headers)
@@ -38,35 +39,41 @@ class Api(object):
       kwargs['auth'] = self.auth
 
       response = method('{}/{}'.format(self.base_url, url), *args, **kwargs)
-      response.raise_for_status()
+
+      if raise_for_status:
+         if response.status_code == 422:
+            body = response.json()
+            raise Exception(body['message'], body['errors'])
+         else:
+            response.raise_for_status()
 
       return response
 
    def get(self, url, *args, **kwargs):
       """Perform a GET request to the API
 
-      See the `call` method for avaolable arguments.
+      See the `call` method for available arguments.
       """
       return self.call(requests.get, url, *args, **kwargs)
 
    def post(self, url, *args, **kwargs):
       """Perform a POST request to the API
 
-      See the `call` method for avaolable arguments.
+      See the `call` method for available arguments.
       """
       return self.call(requests.post, url, *args, **kwargs)
 
    def put(self, url, *args, **kwargs):
       """Perform a PUT request to the API
 
-      See the `call` method for avaolable arguments.
+      See the `call` method for available arguments.
       """
       return self.call(requests.put, url, *args, **kwargs)
 
    def delete(self, url, *args, **kwargs):
       """Perform a DELETE request to the API
 
-      See the `call` method for avaolable arguments.
+      See the `call` method for available arguments.
       """
       return self.call(requests.delete, url, *args, **kwargs)
 
