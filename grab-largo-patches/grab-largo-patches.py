@@ -16,7 +16,7 @@ label_id = 0
 
 api = Api(email, token)
 
-endpoint_url = '{}s/{}/annotations/filter/label/{}'
+endpoint_url = '{}s/{}/image-annotations/filter/label/{}'
 annotations = api.get(endpoint_url.format(model_type, model_id, label_id)).json()
 
 patch_url = 'https://biigle.de/storage/largo-patches/{}/{}/{}/{}.jpg'
