@@ -35,3 +35,13 @@ api.delete('projects/{}/users/{}'.format(projects[0]['id'], members[0]['id']))
 # See: https://biigle.de/doc/api/index.html#api-Projects-UpdateProjects
 api.put('projects/{}'.format(projects[0]['id']), json={'name': 'New Project Name'})
 ```
+
+## Environment variables
+
+It is safer to use environment variables or a separate `.env` file to store your access credentials. To enable support for a `.env` file, install the `python-dotenv` package. Then rename the `.env.example` file to `.env` and enter your email and token there. You can then simply get the API wrapper like this:
+
+```python
+from biigle import Api
+
+api = Api()
+```

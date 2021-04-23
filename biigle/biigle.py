@@ -1,9 +1,16 @@
 import copy
 import requests
 from requests.auth import HTTPBasicAuth
+import os
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+   pass
 
 class Api(object):
-   def __init__(self, email, token, base_url = 'https://biigle.de/api/v1', headers = {}):
+   def __init__(self, email = '', token = '', base_url = 'https://biigle.de/api/v1', headers = {}):
       """Create a new instance.
 
       Args:
@@ -14,6 +21,8 @@ class Api(object):
          base_url (str): Base URL to use for the API URL. Default: `'https://biigle.de/api/v1'`.
          headers (dict): Default headers to use for each request. Default: `{'Accept': 'application/json'}`.
       """
+      email = email if email else os.getenv('BIIGLE_API_EMAIL')
+      token = token if token else os.getenv('BIIGLE_API_TOKEN')
       self.auth = HTTPBasicAuth(email, token)
       self.base_url = base_url
       self.headers = {'Accept': 'application/json'}
