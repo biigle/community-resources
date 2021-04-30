@@ -23,6 +23,8 @@ class Api(object):
       """
       email = email if email else os.getenv('BIIGLE_API_EMAIL')
       token = token if token else os.getenv('BIIGLE_API_TOKEN')
+      if email is None or token is None:
+         raise ValueError("No API credentials were provided!")
       self.auth = HTTPBasicAuth(email, token)
       self.base_url = base_url
       self.headers = {'Accept': 'application/json'}
