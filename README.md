@@ -12,6 +12,7 @@ This is a list of all scripts that are currently available in this repository. E
 | [`convert-laser-points`](convert-laser-points) | Create annotations from the positions of a laser point detection. |
 | [`grab-largo-patches`](grab-largo-patches) | Download the Largo patches of annotations with a specific label. |
 | [`regular-sampling-grid`](regular-sampling-grid) | Create annotations that form a regular grid for all images of a volume. |
+| [`create-volume`](create-volume) | Create a new volume based on files found in a local directory. |
 
 
 ## Add your script
