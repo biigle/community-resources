@@ -2,6 +2,8 @@
 
 Create a json report in the standard Coco format from the csv Biigle report.
 
+N.B. The only supported shapes are "LineString", "Polygon" and "Rectangle"
+
 ## Required dependencies
 
 +import numpy as np
