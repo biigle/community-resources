@@ -3,12 +3,10 @@ import json
 import pandas as pd
 import os
 
-# name of the "csv" report from biigle
-csv_name = "5026-test-volume"
-# csv (input) path
-path = "../reports/" + csv_name + ".csv" # the path to the CSV file
+# the path to the CSV file
+path = sys.argv[1]
 # json (output) path
-save_json_path = "../reports/" + csv_name + ".json"
+save_json_path = sys.argv[2]
 data = pd.read_csv(path)
 
 images = []
