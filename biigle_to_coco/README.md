@@ -14,6 +14,8 @@ Create a json report in the standard Coco format from the csv Biigle report.
 
 +import sys
 
++import csv
+
 
 ## Usage
 
