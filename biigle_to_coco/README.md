@@ -2,6 +2,14 @@
 
 Create a json report in the standard Coco format from the csv Biigle report.
 
+## Required dependencies
+
++import numpy as np
+
++import json
+
++import pandas as pd
+
 ## Usage
 
 Set the following variables at the top of the script:
