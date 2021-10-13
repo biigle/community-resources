@@ -10,6 +10,8 @@ Create a json report in the standard Coco format from the csv Biigle report.
 
 +import pandas as pd
 
++import warnings
+
 ## Usage
 
 Set the following variables at the top of the script:
