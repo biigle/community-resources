@@ -24,7 +24,6 @@ def image(row):
     image = {}
     # row.attributes is a string, we want to transform it in a dict
     desired_dict = json.loads(row.attributes)
-    print((desired_dict))
     image["height"] = desired_dict["height"]
     image["width"] = desired_dict["width"]
     image["id"] = int(row.image_id)
