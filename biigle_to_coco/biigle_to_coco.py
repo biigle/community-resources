@@ -2,6 +2,9 @@ import numpy as np
 import json
 import pandas as pd
 import os
+import warnings
+import sys
+import csv
 
 # the path to the CSV file
 path = sys.argv[1]
@@ -9,14 +12,14 @@ path = sys.argv[1]
 save_json_path = sys.argv[2]
 data = pd.read_csv(path)
 
-images = []
-categories = []
-annotations = []
-
-data['fileid'] = data['filename'].astype('category').cat.codes
-data['categoryid']= pd.Categorical(data['label_name'],ordered= True).codes
-data['categoryid'] = data['categoryid']+1
-data['annid'] = data.index
+def check_shape(row):
+    # only polygons are accepted
+    shape = row.shape_name
+    flag_shape = 1
+    if not(shape == "LineString" or shape == "Polygon" or shape == "Rectangle") :
+        warnings.warn('The shape %s is not supported !' %(shape))
+        flag_shape = 0
+    return flag_shape
 
 def image(row):
     image = {}
@@ -60,15 +63,31 @@ def annotation(row):
     annotation["category_id"] = row.label_id
     annotation["id"] = int(row.annotation_label_id)
     return annotation
+
+# delete rows with not supported shapes
+for index, row in data.iterrows():
+    if not check_shape(row) :
+        data.drop(index, inplace=True)
     
+images = []
+categories = []
+annotations = []
+
+data['fileid'] = data['filename'].astype('category').cat.codes
+data['categoryid']= pd.Categorical(data['label_name'],ordered= True).codes
+data['categoryid'] = data['categoryid']+1
+data['annid'] = data.index
+imagedf = data.drop_duplicates(subset=['fileid']).sort_values(by='fileid')
+catdf = data.drop_duplicates(subset=['categoryid']).sort_values(by='categoryid')
+
 for row in data.itertuples():
     annotations.append(annotation(row))
     
-imagedf = data.drop_duplicates(subset=['fileid']).sort_values(by='fileid')
+
 for row in imagedf.itertuples():
     images.append(image(row))
 
-catdf = data.drop_duplicates(subset=['categoryid']).sort_values(by='categoryid')
+
 for row in catdf.itertuples():
     categories.append(category(row))
 
