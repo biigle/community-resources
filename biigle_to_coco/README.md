@@ -12,6 +12,9 @@ Create a json report in the standard Coco format from the csv Biigle report.
 
 +import warnings
 
++import sys
+
+
 ## Usage
 
 Set the following variables at the top of the script:
