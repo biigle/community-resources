@@ -13,7 +13,7 @@ This is a list of all scripts that are currently available in this repository. E
 | [`grab-largo-patches`](grab-largo-patches) | Download the Largo patches of annotations with a specific label. |
 | [`regular-sampling-grid`](regular-sampling-grid) | Create annotations that form a regular grid for all images of a volume. |
 | [`create-volume`](create-volume) | Create a new volume based on files found in a local directory. |
-| [`biigle_to_coco`](biigle_to_coco) | Create a json report in the standard Coco format from the csv Biigle report. |
+| [`biigle_to_coco`](biigle_to_coco) | Create a JSON report in the standard COCO format from the BIIGLE CSV image annotation report. |
 
 
 
