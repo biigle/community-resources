@@ -1,33 +1,17 @@
-# Biigle to coco
+# BIIGLE to COCO
 
-Create a json report in the standard Coco format from the csv Biigle report.
+Create a JSON report in the standard COCO format from the BIIGLE CSV image annotation report.
 
-N.B. The only supported shapes are "LineString", "Polygon" and "Rectangle"
+**The only supported shapes are `LineString`, `Polygon` and `Rectangle`**
 
-## Required dependencies
+## Installation
 
-+import numpy as np
-
-+import json
-
-+import pandas as pd
-
-+import warnings
-
-+import sys
-
-+import csv
-
+The script requires `pandas`.
 
 ## Usage
 
-Set the following variables at the top of the script:
+```bash
+python biigle_to_coco.py [csv-input-file] [coco-output-file]
+```
 
-| Name | Description |
-| --- | --- |
-| `csv_name` | The name of the csv Biigle report |
-| `path` | path of the csv Biigle report (input file) |
-| `save_json_path` | path of the Coco report (output file) |
-
-The result is a json file exploitable by the most common AI libraries in the 
-standard Coco format.
+The result is a JSON file exploitable by most common AI libraries in the standard COCO format.
