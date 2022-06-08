@@ -34,24 +34,10 @@ for row in data.itertuples():
         splitted_string = string_array.split (",")
         # desired_array is an array of doubles, like [x1, y1, x2, y2, ecc]
         desired_array = [float(numeric_string) for numeric_string in splitted_string]
-        x_coord = desired_array[::2]  # x = even  - start at the beginning at take every second item
-        y_coord = desired_array[1::2] # y = odd - start at second item and take every second item
-        # check that x coordinates are in the image range
-        for i in range(len(x_coord)) :
-            if x_coord[i] < 0 :
-                x_coord[i] = 0.0
-            elif x_coord[i] > max_width :
-                x_coord[i] = max_width
-        # check that y coordinates are in the image range
-        for i in range(len(y_coord)) :
-            if y_coord[i] < 0 :
-                y_coord[i] = 0.0
-            elif y_coord[i] > max_heigth :
-                y_coord[i] = max_heigth
+        x_coord = map(lambda x: max(min(x, max_width), 0), desired_array[::2])
+        y_coord = map(lambda y: max(min(y, max_heigth), 0), desired_array[1::2])
         # create the adjusted coordinates vector
-        desired_array_adjusted = x_coord                                                                                  
-        for i,j in enumerate(y_coord): 
-            desired_array_adjusted.insert(2*i+1,j)
+        desired_array_adjusted = list(x_coord)    
         # convert the list into a string
         desired_array_adjusted = str(desired_array_adjusted)
         # replace the vector of coordinates
