@@ -1,14 +1,11 @@
-# Adjust Annotations
+# BIIGLE Community Scripts
 
-Parses a CSV image annotation report file and adjusts all annotation coordinates to be inside the image 
+A collection of community-maintained scripts that use the BIIGLE API.
 
-## Installation
+## Available scripts
 
-The script requires `pandas`.
+This is a list of all scripts that are currently available in this repository. Each script has a readme file with detailed information.
 
-<<<<<<< HEAD
-## Usage
-=======
 | Script | Description |
 | ------ | ----------- |
 | [`biigle`](biigle) | A thin wrapper of the BIIGLE API that can be used in custom Python scripts. |
@@ -18,8 +15,12 @@ The script requires `pandas`.
 | [`create-volume`](create-volume) | Create a new volume based on files found in a local directory. |
 | [`biigle_to_coco`](biigle_to_coco) | Create a json report in the standard Coco format from the csv Biigle report. |
 | [`check_coordinates`](check_coordinates) | Parses a CSV image annotation report file and adjusts all annotation coordinates to be inside the image . |
->>>>>>> parent of 10bdcf4 (Update global readme)
 
-```bash
-python check_coordinates.py [csv-input-file] [csv-output-file]
-```
+
+## Add your script
+
+Please read the [contributing guidelines](CONTRIBUTING.md) for more information on how to add your own custom scripts to this collection.
+
+## Disclaimer
+
+These scripts are community-maintained and *not* officially developed or supported by the BIIGLE developers. Although we review each new script when it is submitted, we do not guarantee that it works as you intended. Please read the readme of each script that you use carefully and review the script.
