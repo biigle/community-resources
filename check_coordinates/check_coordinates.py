@@ -34,10 +34,22 @@ for row in data.itertuples():
         splitted_string = string_array.split (",")
         # desired_array is an array of doubles, like [x1, y1, x2, y2, ecc]
         desired_array = [float(numeric_string) for numeric_string in splitted_string]
-        x_coord = map(lambda x: max(min(x, max_width), 0), desired_array[::2])
-        y_coord = map(lambda y: max(min(y, max_heigth), 0), desired_array[1::2])
-        # create the adjusted coordinates vector
-        desired_array_adjusted = list(x_coord)    
+        # check if the shape is a circle
+        if len(desired_array) == 3 :
+            x_coord = max(min(desired_array[0], max_width), 0)
+            y_coord = max(min(desired_array[1], max_width), 0)
+            desired_array_adjusted = []
+            desired_array_adjusted.append(x_coord)
+            desired_array_adjusted.append(y_coord)
+            desired_array_adjusted.append(desired_array[2])
+        # for other shapes
+        else :
+            x_coord = map(lambda x: max(min(x, max_width), 0), desired_array[::2])
+            y_coord = map(lambda y: max(min(y, max_heigth), 0), desired_array[1::2])
+            # create the adjusted coordinates vector
+            desired_array_adjusted = list(x_coord)
+            for i,j in enumerate(y_coord): 
+                desired_array_adjusted.insert(2*i+1,j)
         # convert the list into a string
         desired_array_adjusted = str(desired_array_adjusted)
         # replace the vector of coordinates
