@@ -17,6 +17,7 @@ The script requires `pandas`.
 | [`regular-sampling-grid`](regular-sampling-grid) | Create annotations that form a regular grid for all images of a volume. |
 | [`create-volume`](create-volume) | Create a new volume based on files found in a local directory. |
 | [`biigle_to_coco`](biigle_to_coco) | Create a json report in the standard Coco format from the csv Biigle report. |
+| [`check_coordinates`](check_coordinates) | Parses a CSV image annotation report file and adjusts all annotation coordinates to be inside the image . |
 >>>>>>> parent of 10bdcf4 (Update global readme)
 
 ```bash
