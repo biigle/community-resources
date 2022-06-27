@@ -2,13 +2,13 @@
 
 Create a JSON report in the standard COCO format from the BIIGLE CSV image annotation report.
 
-**The only supported shapes are `LineString`, `Polygon` and `Rectangle`**
+**The only supported shapes are `LineString`, `Polygon`, `Rectangle`, `Circle` and `Ellipse` **
 
 `LineString` annotations are stored like `Polygon` anotations in the COCO format.
 
 ## Installation
 
-The script requires `pandas`.
+The script requires `pandas`, `numpy` and `shapely`.
 
 ## Usage
 
