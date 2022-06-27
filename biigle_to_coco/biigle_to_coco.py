@@ -28,8 +28,8 @@ def image(row):
     image["width"] = desired_dict["width"]
     image["id"] = int(row.image_id)
     image["file_name"] = row.filename
-    image["longitude"] = float(row.image_longitude)
-    image["latitude"] = float(row.image_latitude)
+    image["longitude"] = float(row.image_longitude) if not math.isnan(row.image_longitude) else None
+    image["latitude"] = float(row.image_latitude) if not math.isnan(row.image_latitude) else None
     return image
 
 def category(row):
