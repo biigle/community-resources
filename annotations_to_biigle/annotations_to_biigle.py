@@ -10,7 +10,7 @@ Example usage of annotations to biigle functions
 
 # Biigle email and token
 email = 'mmarcill@ifremer.fr'
-token = 'jxSmYAj3uM7OOA1GIp5w2wCOyYMhb7vo'
+token = 'xxx'
 label_tree_id = 1229  # Label tree id
 volume_id = 7544  # Volume id where images are stored
 
