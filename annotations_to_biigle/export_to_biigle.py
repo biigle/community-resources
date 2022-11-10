@@ -4,6 +4,14 @@ import pandas as pd
 import utils_pascalVOC
 
 
+def split_dataframe(df, chunk_size=99):
+    chunks = list()
+    num_chunks = len(df) // chunk_size + 1
+    for i in range(num_chunks):
+        chunks.append(df[i * chunk_size:(i + 1) * chunk_size])
+    return chunks
+
+
 def add_label(name, label_tree_id, api):
     """
     Add a missing label to the label tree. Default color red
@@ -85,27 +93,33 @@ def pascalVOC_to_biigle(image_name, pascalVOC_path, label_idx, images_idx, shape
     annotations = utils_pascalVOC.read_pascalVOC_content(pascalVOC_path)  # Get annotations from pascalVOC
 
     post_data = {
+        'image_id': 0,
         'shape_id': shapes_id[shape],
         'label_id': 0,
         'confidence': 1,
         'points': [],
     }
-    for index, row in annotations.iterrows():  # For each annotation
-        # Prepare annotations coordinates
-        if shape == "Circle":
-            width = row['xmax'] - row['xmin']
-            height = row['ymax'] - row['ymin']
-            x = row['xmin'] + (width / 2)
-            y = row['ymin'] + (height / 2)
-            points = [int(x), int(y), int(max(width, height))]
-        elif shape == "Rectangle":
-            points = [int(row["xmin"]), int(row["ymin"]), int(row["xmax"]), int(row["ymin"]), int(row["xmax"]),
-                      int(row["ymax"]), int(row["xmin"]), int(row["ymax"])]
 
-        for label in label_idx:
-            if label[0] == row["name"]:
-                post_data['label_id'] = label[1]  # Get label biigle id
-        post_data['points'] = points
-        post_data['confidence'] = float(row["confidence"])
-        p = api.post('images/{}/annotations'.format(image_id), json=post_data)  # Post payload to biigle
+    for annotation_split in split_dataframe(annotations):  # split into bins of 99 annotations
+        list_post_data = []
+        for index, row in annotation_split.iterrows():  # For each annotation
+            # Prepare annotations coordinates
+            if shape == "Circle":
+                width = row['xmax'] - row['xmin']
+                height = row['ymax'] - row['ymin']
+                x = row['xmin'] + (width / 2)
+                y = row['ymin'] + (height / 2)
+                points = [int(x), int(y), int(max(width, height))]
+            elif shape == "Rectangle":
+                points = [int(row["xmin"]), int(row["ymin"]), int(row["xmax"]), int(row["ymin"]), int(row["xmax"]),
+                          int(row["ymax"]), int(row["xmin"]), int(row["ymax"])]
+
+            for label in label_idx:
+                if label[0] == row["name"]:
+                    post_data['label_id'] = label[1]  # Get label biigle id
+            post_data['points'] = points
+            post_data['confidence'] = float(row["confidence"])
+            post_data['image_id'] = image_id
+            list_post_data.append(post_data)
+        p = api.post('image-annotations', json=list_post_data)  # Post payload to biigle
     return 1
