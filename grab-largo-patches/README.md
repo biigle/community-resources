@@ -2,7 +2,7 @@
 
 Download the Largo patches of annotations (with specific label). The script can either be downloaded and run as a jupyter notebook or directly opened in Google colab
 
-<a target="_blank" href="https://colab.research.google.com/github/biigle/community-scripts/blob/async-grab-largo-patches/grab-largo-patches/grab-largo-patches.ipynb">
+<a target="_blank" href="https://colab.research.google.com/github/biigle/community-scripts/blob/master/grab-largo-patches/grab-largo-patches.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
