@@ -16,6 +16,13 @@ This is a list of all scripts that are currently available in this repository. E
 | [`check_coordinates`](check_coordinates)         | Parses a CSV image annotation report file and adjusts all annotation coordinates to be inside the image. |
 | [`annotations_to_biigle`](annotations_to_biigle) | Import pascalVOC annotations to BIIGLE, automatic detection and import using yoloV5 models.              |
 
+## Other resources
+
+This is a list of other tools and resources that are developed by the BIIGLE community.
+
+| Resource                                         | Description                                                                                              |
+|--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| [example](link)                               | A great example for an external resouce
 
 ## Add your script
 
