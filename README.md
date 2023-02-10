@@ -22,7 +22,7 @@ This is a list of other tools and resources that are developed by the BIIGLE com
 
 | Resource                                         | Description                                                                                              |
 |--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| [example](link)                               | A great example for an external resouce
+| [example](link)                               | A great example for an external resource.
 
 ## Add your script
 
