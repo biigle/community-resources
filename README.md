@@ -23,7 +23,6 @@ This is a list of other tools and resources that are developed by the BIIGLE com
 | Resource                                         | Description                                                                                              |
 |--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
 | [Chubacapp](https://github.com/marinmarcillat/CHUBACAPP) | Toolbox to process images, 3D models and annotation data from ROV and AUV. YoloV5 inference to Biigle, annotations reprojection, 3D topographic metrics, disjoint image selection and more. Still under active development, feedback welcomed.
-|
 | [example](link)                               | A great example for an external resource.
 
 ## Add your script
