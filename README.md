@@ -1,10 +1,10 @@
-# BIIGLE Community Scripts
+# BIIGLE Community Resources
 
-A collection of community-maintained scripts that use the BIIGLE API.
+A collection of community-maintained resources for [BIIGLE](https://biigle.de).
 
 ## Available scripts
 
-This is a list of all scripts that are currently available in this repository. Each script has a readme file with detailed information.
+This is a list of scripts using the BIIGLE API that are currently available in this repository. Each script has a readme file with detailed information.
 
 | Script                                           | Description                                                                                              |
 |--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
@@ -16,6 +16,10 @@ This is a list of all scripts that are currently available in this repository. E
 | [`check_coordinates`](check_coordinates)         | Parses a CSV image annotation report file and adjusts all annotation coordinates to be inside the image. |
 | [`annotations_to_biigle`](annotations_to_biigle) | Import pascalVOC annotations to BIIGLE, automatic detection and import using yoloV5 models.              |
 
+### Add your script
+
+Please read the [contributing guidelines](CONTRIBUTING.md) for more information on how to add your own custom scripts to this collection.
+
 ## Other resources
 
 This is a list of other tools and resources that are developed by the BIIGLE community.
@@ -26,10 +30,6 @@ This is a list of other tools and resources that are developed by the BIIGLE com
 | [Chubacapp](https://github.com/marinmarcillat/CHUBACAPP) | Toolbox to process images, 3D models and annotation data from ROV and AUV. YoloV5 inference to BIIGLE, annotations reprojection, 3D topographic metrics, disjoint image selection and more. Still under active development, feedback welcomed. |
 | [DeepSeaCRU Resources](https://github.com/DeepSeaCRU/BIIGLE-resources) | Various resources by the [Deep Sea Conservation Research Unit](https://deepseacru.org) to interact with BIIGLE |
 
-## Add your script
-
-Please read the [contributing guidelines](CONTRIBUTING.md) for more information on how to add your own custom scripts to this collection.
-
 ## Disclaimer
 
-These scripts are community-maintained and *not* officially developed or supported by the BIIGLE developers. Although we review each new script when it is submitted, we do not guarantee that it works as you intended. Please read the readme of each script that you use carefully and review the script.
+These scripts and resources are community-maintained and *not* officially developed or supported by the BIIGLE developers. Although we review each new script when it is submitted to this repository, we do not guarantee that it works as you intended. Please read the readme of each script that you use carefully and review the script.

@@ -2,6 +2,8 @@
 
 Please follow these guidelines when you want to add a script to this repository.
 
+Do you want to add another resource? Then you can directly add your link and description to the "other resources" table of the main readme (see [submission](#submission)).
+
 ## Structure
 
 Each script should have the following structure:
