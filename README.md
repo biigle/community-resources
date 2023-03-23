@@ -22,7 +22,9 @@ This is a list of other tools and resources that are developed by the BIIGLE com
 
 | Resource                                         | Description                                                                                              |
 |--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| [Chubacapp](https://github.com/marinmarcillat/CHUBACAPP) | Toolbox to process images, 3D models and annotation data from ROV and AUV. YoloV5 inference to Biigle, annotations reprojection, 3D topographic metrics, disjoint image selection and more. Still under active development, feedback welcomed.
+| [An ecologist's guide to BIIGLE](https://doi.org/10.5281/zenodo.7728926) | A document created by the [Deep Sea Conservation Research Unit](https://deepseacru.org) that is intended to help ecologists get started using BIIGLE to annotate their image and video data. |
+| [Chubacapp](https://github.com/marinmarcillat/CHUBACAPP) | Toolbox to process images, 3D models and annotation data from ROV and AUV. YoloV5 inference to BIIGLE, annotations reprojection, 3D topographic metrics, disjoint image selection and more. Still under active development, feedback welcomed. |
+| [DeepSeaCRU Resources](https://github.com/DeepSeaCRU/BIIGLE-resources) | Various resources by the [Deep Sea Conservation Research Unit](https://deepseacru.org) to interact with BIIGLE |
 
 ## Add your script
 
