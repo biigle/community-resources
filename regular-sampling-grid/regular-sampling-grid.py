@@ -27,7 +27,7 @@ shapes = {s['name']: s['id'] for s in shapes}
 
 # Get the list of image IDs that belong to the volume.
 # https://biigle.de/doc/api/index.html#api-Volumes-IndexVolumeImages
-image_ids = api.get('volumes/{}/images'.format(volume_id)).json()
+image_ids = api.get('volumes/{}/files'.format(volume_id)).json()
 rectangle_width = 0
 rectangle_height = 0
 post_data = {
