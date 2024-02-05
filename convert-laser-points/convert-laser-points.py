@@ -1,4 +1,3 @@
-import sys
 import copy
 from requests.exceptions import HTTPError
 from biigle import Api
@@ -20,8 +19,8 @@ shapes = api.get('shapes').json()
 shapes = {s['name']: s['id'] for s in shapes}
 
 # Get the list of image IDs that belong to the volume.
-# https://biigle.de/doc/api/index.html#api-Volumes-IndexVolumeImages
-image_ids = api.get('volumes/{}/images'.format(volume_id)).json()
+# https://biigle.de/doc/api/index.html#api-Volumes-IndexVolumeFiles
+image_ids = api.get('volumes/{}/files'.format(volume_id)).json()
 post_data = {
    'shape_id': shapes['Point'],
    'label_id': label_id,
