@@ -15,6 +15,7 @@ This is a list of scripts using the BIIGLE API that are currently available in t
 | [`create-volume`](create-volume)                 | Create a new volume based on files found in a local directory.                                           |
 | [`check_coordinates`](check_coordinates)         | Parses a CSV image annotation report file and adjusts all annotation coordinates to be inside the image. |
 | [`annotations_to_biigle`](annotations_to_biigle) | Import pascalVOC annotations to BIIGLE, automatic detection and import using yoloV5 models.              |
+| [`glass-theme`](glass-theme)                     | An optional alternative dark theme for the BIIGLE web interface, installed as a userscript.              |
 
 ### Add your script
 
