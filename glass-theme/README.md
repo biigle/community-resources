@@ -4,6 +4,16 @@ An optional alternative look for the BIIGLE web interface, packaged as a userscr
 
 The theme only changes how BIIGLE looks in your own browser. It does not change any data or functionality, and it does not affect other users. You can switch it off at any time and return to BIIGLE's default appearance.
 
+![The image annotation tool with the Glass Theme](screenshots/annotation-tool.jpg)
+
+## Screenshots
+
+| Dashboard | Volume overview |
+|---|---|
+| ![Dashboard](screenshots/dashboard.jpg) | ![Volume overview with an open sidebar](screenshots/volume-overview.jpg) |
+| **Label tree** | **Volume settings** |
+| ![Label tree](screenshots/label-tree.jpg) | ![Volume settings](screenshots/volume-edit.jpg) |
+
 ## Installation
 
 The theme runs in a userscript manager browser extension. We recommend [Violentmonkey](https://violentmonkey.github.io/), which is free and open source.
